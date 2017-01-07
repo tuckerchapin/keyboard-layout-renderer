@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import React3 from 'react-three-renderer';
 import * as THREE from 'three';
-import STLLoader from 'three-stl-loader';
 
-
-export default class KeyboardRenderer extends React.Component {
+export default class KeyboardRenderer extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -30,13 +28,6 @@ export default class KeyboardRenderer extends React.Component {
                 ),
             });
         };
-
-        // let loader = new STLLoader();
-        // loader.load('./path/to/daaaamn.stl', function (geometry) {
-        //     var material = new THREE.MeshNormalMaterial()
-        //     var mesh = new THREE.Mesh(geometry, material)
-        //     scene.add(mesh)
-        // })
     }
 
     render() {
