@@ -8,6 +8,7 @@
 	</head>
 	<body>
 		<script src="js/three.min.js"></script>
+		<script src="js/STLLoader.js"></script>
 		<script>
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -16,10 +17,18 @@
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
+			// var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			// var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			// var cube = new THREE.Mesh( geometry, material );
+			// scene.add( cube );
+            var cube;
+
+            var loader = new THREE.STLLoader();
+			loader.load( 'assets/models/files/key-SA-1.stl', function ( geometry ) {
+    			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    		    cube = new THREE.Mesh( geometry, material );
+				scene.add( mesh );
+			} );
 
 			camera.position.z = 5;
 
