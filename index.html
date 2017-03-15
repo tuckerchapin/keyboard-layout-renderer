@@ -11,39 +11,6 @@
 		<script src="js/lib/STLLoader.js"></script>
         <script src="js/lib/OrbitControls.js"></script>
 		<script>
-			// var scene = new THREE.Scene();
-			// var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-            //
-			// var renderer = new THREE.WebGLRenderer();
-			// renderer.setSize(window.innerWidth, window.innerHeight);
-			// document.body.appendChild(renderer.domElement);
-            //
-			// var key;
-            //
-            // var loader = new THREE.STLLoader();
-			// loader.load('assets/models/files/key-SA-1.stl', (geometry) => {
-    		// 	var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
-    		//     key = new THREE.Mesh(geometry, material);
-			// 	scene.add(key);
-            //     // key.rotation.x += 1;
-			// 	// key.rotation.y += 1;
-            //     key.rotation.z += 90;
-			// });
-            //
-			// camera.position.z = 100;
-            //
-			// var render = function () {
-			// 	requestAnimationFrame(render);
-            //
-			// 	// key.rotation.x += 0.1;
-			// 	// key.rotation.y += 0.1;
-            //
-			// 	renderer.render(scene, camera);
-			// };
-            //
-			// render();
-
-
             //////////////////////////////////////////////////////////////////////////////////
         	//		Init
         	//////////////////////////////////////////////////////////////////////////////////
@@ -74,6 +41,9 @@
                     let mesh = new THREE.Mesh( geometry, material );
                     mesh.position.x += (i - 5)*20;
                     mesh.position.y += 20;
+                    if (i == 4) {
+                        mesh.material.color.setHex(0xff0000);
+                    }
                     scene.add(mesh);
                 }
 			});
